@@ -104,6 +104,7 @@ docker-compose build
 - Database Access: Ensure your AWS RDS instance’s security group allows inbound connections on port `5432` from your local machine or Docker host IP.
 - Development vs. Production: This setup uses Django’s development server (runserver). For production, configure a proper WSGI server (e.g., Gunicorn) and adjust the command in `docker-compose.yml`.
 - Cron Job: This README assumes the cron job setup (e.g., via Celery) will be added later. Once implemented, additional services (e.g., Redis, Celery worker, Celery Beat) may need to be included in `docker-compose.yml`.
+- On development, make sure to modify the new `requirements.txt` by running `pip freeze > requirements.txt`
 
 ## Troubleshooting
 - Connection Errors: If the container can’t connect to RDS, verify your `.env` credentials and RDS security group settings.
